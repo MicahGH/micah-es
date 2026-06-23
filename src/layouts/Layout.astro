@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/onest/wght.css';
+
 import Header from "../components/Header.astro";
 ---
 
@@ -7,10 +9,9 @@ import Header from "../components/Header.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="public/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Micah Shiels - Portfolio</title>
 	</head>
 	<body>			
 	<Header/>
@@ -23,11 +24,12 @@ import Header from "../components/Header.astro";
 		color-scheme: light dark;
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Onest Variable", system-ui, sans-serif;
 	}
 	body {
-		background: #000;
+		background: #050505;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		height: 100vh;
 	}
 </style>

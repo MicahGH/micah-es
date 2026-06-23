@@ -12,11 +12,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/onest": "^5.2.11",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^7.0.1",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "typescript": "^6.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "sharp@0.34.5": true
   }
 }
