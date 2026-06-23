@@ -1,11 +1,14 @@
 ---
+import portraitMicahShiels from "../assets/portrait_micah_shiels_bw.png"
+
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
 ---
 
 <Layout>
 	<main>
-		<section class="w-full mx-auto lg:w-185 py-44">
+		<section class="w-full mx-auto lg:w-185 py-5">
+		<div class="flex justify-center"><img class="w-100 h-100 rounded-full opacity-70" src={portraitMicahShiels.src} alt="Portrait of Micah Shiels in black and white"/></div>
 		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">Micah Shiels <a href="https://www.linkedin.com/in/micahshiels" class="flex justify-center items-center" target="_blank" rel="noopener"><Badge>Available to hire</Badge></a></h1>
 		<h2 class="text-xl opacity-80">8 years of experience in the technology sector. Software / Backend Engineer.</h2>
 		<ul></ul>
