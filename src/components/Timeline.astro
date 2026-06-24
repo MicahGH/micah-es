@@ -1,0 +1,42 @@
+---
+const EXPERIENCE = [
+    {
+    title: "Professional Growth Break",
+    date: "February 2026 — Present",
+    description: "I'm taking a focused break to invest in my professional growth while I look for new opportunites: completing a Data Structures & Algorithms course and strengthening problem-solving skills through LeetCode, completing a Systems Design course and building projects to apply what I learn, and learning German and Portuguese."
+    },
+    {
+    title: "Mid Software Engineer",
+    date: "November 2025 — February 2026",
+    description: "Collaborated on and implemented robust backend services, databases, and data pipelines. Optimised critical processing systems using Redis, PostgreSQL, and Polars, reducing execution times by up to 90%. Also assisted junior engineers with code quality, PR reviews and system design recommendations.",
+    company: "Study Hall AI",
+    isPromotion: true
+    },
+    {
+    title: "Software Engineer",
+    date: "July 2022 — November 2025",
+    description: "Built and maintained backend systems and databases for an AI-powered education platform using Python, FastAPI, PostgreSQL, Neo4j and MongoDB. Developed scalable data pipelines, automated legacy workflows, optimised database performance, and created internal tools that improved operational efficiency across teams.",
+    company: "Study Hall AI"
+    },
+    {
+    title: "English Teacher (TEFL)",
+    date: "October 2021 — July 2022",
+    description: "Earned a TEFL Distinction after delivering over 400 English lessons, allowing me to build strong communication skills and the ability to break down complex concepts into clear explanations which is a great asset in software development.",
+    company: "Your Language Club Getafe"
+    },
+    {
+    title: "Database Administrator (DBA)",
+    date: "October 2017 — October 2021",
+    description: "Managed product data at scale across two databases (MySQL & SQL Server) for 6,000+ SKUs / 300,000+ variants, automating updates with SQL & VBA, and supporting IT operations.",
+    company: "Ministry of Furniture"
+}]
+
+import TimelineItem from "./TimelineItem.astro"
+---
+<ol class="relative border-s border-default">
+  {EXPERIENCE.map((experience) => (
+    <li class="mb-10 ms-4">   
+      <TimelineItem {...experience}/>
+    </li>
+  ))}
+</ol>
