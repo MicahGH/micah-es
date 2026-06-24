@@ -3,17 +3,38 @@ import portraitMicahShiels from "../assets/portrait_micah_shiels_bw.png"
 
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import IconBox from '../icons/IconBox.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import LeetCodeIcon from '../icons/LeetCode.astro';
+import EmailIcon from '../icons/Email.astro';
 ---
 
-<Layout>
+<Layout title="Portfolio of Micah Shiels - Software Engineer and Programmer">
 	<main>
 		<section class="w-full mx-auto lg:w-185 py-5">
-		<span class="flex justify-center">This website is work in progress</span>
-		<div class="flex justify-center"><img class="w-100 h-100 mask-[linear-gradient(to_bottom,black_50%,transparent_100%)]" src={portraitMicahShiels.src} alt="Portrait of Micah Shiels in black and white"/></div>
+		<div class="flex justify-center"><img class="size-100 mask-[linear-gradient(to_bottom,black_50%,transparent_100%)]" src={portraitMicahShiels.src} alt="Portrait of Micah Shiels in black and white"/></div>
 		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">Micah Shiels <a href="https://www.linkedin.com/in/micahshiels" class="flex justify-center items-center" target="_blank" rel="noopener"><Badge>Available to hire</Badge></a></h1>
 		<h2 class="text-2xl">8 years of experience in the technology sector</h2>
 		<h2 class="text-2xl">Software Engineer based in <span class="bg-[linear-gradient(to_bottom,#AA151B_0%,#AA151B_30%,#F1BF00_30%,#F1BF00_70%,#AA151B_70%,#AA151B_100%)] bg-clip-text text-transparent">Spain</span></h2>
-		<ul></ul>
+		<nav class="flex gap-x-2 mt-8">
+			<IconBox href="https://www.linkedin.com/in/micahshiels">
+				<LinkedInIcon class="size-6"/>
+				LinkedIn
+			</IconBox>
+			<IconBox href="https://www.github.com/MicahGH">
+				<GitHubIcon class="size-6"/>
+				GitHub
+			</IconBox>
+			<IconBox href="https://www.leetcode.com/u/MicahLC">
+				<LeetCodeIcon class="size-6"/>
+				LeetCode
+			</IconBox>
+			<IconBox href="malito:micah@micah.es">
+				<EmailIcon class="size-6"/>
+				micah@micah.es
+			</IconBox>
+		</nav>
 		</section>
 	</main>
 </Layout>
