@@ -1,23 +1,83 @@
 ---
+import Docker from "../icons/Docker.astro"
+import Django from "../icons/Django.astro"
+import PostgreSQL from "../icons/PostgreSQL.astro"
+import Python from "../icons/Python.astro"
+import Poetry from "../icons/Poetry.astro"
+import Ass from "../icons/Ass.astro"
+import Tailwind from "../icons/Tailwind.astro"
+import HTML from "../icons/HTML.astro"
+import CSS from "../icons/CSS.astro"
+
+const TAGS = {
+    PYTHON: {
+        name: "Python",
+        icon: Python,
+    },
+    DJANGO: {
+        name: "Django",
+        icon: Django,
+    },
+    POSTGRESQL: {
+        name: "PostgreSQL",
+        icon: PostgreSQL,
+    },
+    DOCKER: {
+        name: "Docker",
+        icon: Docker,
+    },
+    POETRY: {
+        name: "Poetry",
+        icon: Poetry,
+    },
+    ASTRO: {
+        name: "Astro",
+        icon: Ass,
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        icon: Tailwind,
+    },
+    HTML: {
+        name: "HTML",
+        icon: HTML,
+    },
+    CSS: {
+        name: "CSS",
+        icon: CSS,
+    }
+}
 const PROJECTS = [
     {
         title: 'Café EPOS Backend',
-        description: 'A small implementation of the backend of a café EPOS system built for a technical test. Powered by Django, Django REST Framework, PostgreSQL, Poetry, and Docker.',
+        description: 'A small implementation of the backend of a café EPOS system built for a technical test. It allows creating tabs and adding menu items, automatic calculation of subtotal, service charge, VAT and total, mock payment intents and confirmations and API key authentication for endpoints.',
         github: 'https://github.com/MicahGH/cafe-epos',
         image: './projects/cafe_epos.jpg',
-        tags: ['Python', 'Django', 'PostgreSQL', 'Poetry', 'Docker'],
+        tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.POSTGRESQL, TAGS.POETRY, TAGS.DOCKER],
+    },
+    {
+        title: 'Personal Website / Portfolio — micah.es',
+        description: 'Built my own personal website / portfolio after buying the domain: micah.es. Most people know me as a Backend guy and BE guys are infamous for not liking FE, however there is no Wix, Wordpress, AI, etc. here. No easy way out. Just tutorials and learning the old-fashioned way. I even learned to use GIMP to improve the quality and remove the background of my self-portrait. FE is way cooler than I thought.',
+        github: 'https://github.com/MicahGH/micah-es',
+        image: './projects/micah_es.jpg',
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.HTML, TAGS.CSS], 
     }
 ]
 ---
 
 {
     PROJECTS.map(project => (
-        <article>
+        <article class="py-5">
             <h3 class="text-2xl font-semibold text-[#C9A227]">{project.title}</h3>
-            <p>{project.description}</p>
-            <ul>
+            <p class="text-lg mb-2 text-pretty">{project.description}</p>
+            <ul class="flex gap-x-2 flex-row py-2">
                 {project.tags.map(tag => (
-                    <li>{tag}</li>
+                    <li>
+                    <span class={`flex gap-x-2 rounded-full text-xs py-2 px-2 bg-black`}>
+                    <tag.icon class="size-4"/>
+                    {tag.name}
+                    </span>
+                    </li>
                 ))}
             </ul>
             <img class="rounded shadow-2xl shadow-white/10" src={project.image} alt={`Screenshot of the project ${project.image}`}>
