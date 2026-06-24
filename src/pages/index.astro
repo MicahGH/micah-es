@@ -11,6 +11,8 @@ import EmailIcon from '../icons/Email.astro';
 import Timeline from "../components/Timeline.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../icons/Briefcase.astro";
+import Code from "../icons/Code.astro";
+import Projects from "../components/Projects.astro"
 ---
 
 <Layout title="Portfolio of Micah Shiels - Software Engineer and Programmer">
@@ -43,6 +45,12 @@ import Briefcase from "../icons/Briefcase.astro";
 			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
 				<Briefcase class="size-7"/>Work Experience</h2>
 			<Timeline/>
+		</SectionContainer>
+
+		<SectionContainer id="projects" class="py-6">
+			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
+				<Code class="size-7"/>Projects</h2>
+			<Projects/>
 		</SectionContainer>
 	</main>
 </Layout>
