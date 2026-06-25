@@ -1,0 +1,79 @@
+---
+import { TAGS } from "../consts.ts";
+import SkillCategoryItem from "./SkillCategoryItem.astro";
+
+export type Skill = {
+  name: string;
+  icon: any;
+};
+
+const SKILLCATEGORIES: {
+  category: string;
+  skills: Skill[];
+}[] = [
+  {
+    category: "Computer Languages",
+    skills: [
+      TAGS.PYTHON,
+      TAGS.TYPESCRIPT,
+      TAGS.JAVASCRIPT,
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.VBA,
+      TAGS.SQL,
+      TAGS.PLSQL,
+      { ...TAGS.NEO4J, name: "Cypher" }
+    ]
+  },
+  {
+    category: "Frameworks",
+    skills: [
+      TAGS.FASTAPI,
+      TAGS.DJANGO,
+      TAGS.PANDAS,
+      TAGS.POLARS,
+      TAGS.SQLALCHEMY,
+      TAGS.PYDANTIC,
+      TAGS.BEAUTIFULSOUP,
+      TAGS.ASTRO,
+      TAGS.TAILWIND
+    ]
+  },
+  {
+    category: "Databases",
+    skills: [
+      TAGS.POSTGRESQL,
+      TAGS.MYSQL,
+      TAGS.SQLITE,
+      TAGS.MONGODB,
+      TAGS.REDIS,
+      TAGS.NEO4J
+    ]
+  },
+  {
+    category: "Tools",
+    skills: [
+      TAGS.GITHUB,
+      TAGS.DOCKER,
+      TAGS.GCLOUD,
+      TAGS.SENTRY,
+      TAGS.JIRA,
+      TAGS.RETOOL,
+      TAGS.STREAMLIT
+    ]
+  },
+  {
+    category: "Natural Languages",
+    skills: [
+      TAGS.GB,
+      TAGS.ES,
+      TAGS.PT,
+      TAGS.DE
+    ]
+  }
+];
+---
+
+{SKILLCATEGORIES.map((skillCategory) => (
+    <SkillCategoryItem {...skillCategory}/>
+))}
