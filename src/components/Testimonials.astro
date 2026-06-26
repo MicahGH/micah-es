@@ -31,7 +31,7 @@ import TestimonialItem from "./TestimonialItem.astro";
 
   <div class="mx-auto max-w-2xl px-4" data-tc={currentTestimonialId}>
     <div class="flex items-center gap-3 mb-4">
-      <button type="button" data-prev={currentTestimonialId}>
+      <button type="button" class="hover:scale-130" data-prev={currentTestimonialId}>
         <ArrowNarrowLeft stroke="#C9A227"/>
       </button>
 
@@ -39,7 +39,7 @@ import TestimonialItem from "./TestimonialItem.astro";
         <span data-count={currentTestimonialId}>1</span> / {TESTIMONIALS.length}
       </div>
 
-      <button type="button" data-next={currentTestimonialId}>
+      <button type="button" class="hover:scale-130" data-next={currentTestimonialId}>
         <ArrowNarrowRight stroke="#C9A227"/>
       </button>
     </div>
