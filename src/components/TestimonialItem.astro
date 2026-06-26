@@ -1,0 +1,19 @@
+---
+const {currentTestimonialId, name, role, quote, id, relationship, photo} = Astro.props
+---
+
+<article
+    data-card={currentTestimonialId}
+    class:list={[
+    "rounded-3xl border border-white/10 bg-white/5 p-6 transition-opacity duration-300",
+    id === currentTestimonialId.get() ? "opacity-100" : "opacity-0 hidden"
+    ]}
+>
+    <div class="flex flex-col items-center">
+        <img class="size-30 rounded-full" src={photo} alt=`Photo of ${name}`/>
+        <h2 class="text-center font-semibold text-[#C9A227]">{name}</h2>
+        <div class="text-sm text-center text-[#FFF]">{role}</div>
+        <div class="text-center text-xs text-[#FFF]/60">{relationship}</div>
+        <p class="text-[#FFF] py-5 w-full text-left whitespace-pre-line">{quote}</p>
+    </div>
+</article>

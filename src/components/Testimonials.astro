@@ -1,0 +1,71 @@
+---
+const TESTIMONIALS = [
+      { id: 1, quote: "I worked with Micah for almost 2 years at StudyHall in the same team. Micah was a speedy/versatile engineer who understood and saw the whole data architectures and the complex codes at the same time. He was very communicative and knew how to deliver the tasks. Always curious and wanted to know more. Was a pleasure to work with him.", name: "Sangbin Lee", role: "Full Stack Data Engineer", relationship: "Worked in the same team as Micah", photo: "/portraits/sangbin_lee.jpg"},
+      { id: 2, quote: "Micah is an excellent all-round software and data engineer with good experience in AI. He understands that good data-management is the foundation of maintainable AI and web products. Micah and I worked together on an AI project to develop educational materials for school children. Throughout the project he demonstrated that he could handle complex technical tasks and deliver to tight timelines. I'd highly recommend Micah to any software team.", name: "Loch McLachlan", role: "Lead Machine Learning Engineer", relationship: "Worked in the same team as Micah", photo: "/portraits/loch_mclachlan.jpg"},
+      { id: 3, quote: `I've had the pleasure of working with Micah for two years, and for the past year, I've managed him directly. Throughout this time, I've consistently been impressed by his diligence, dedication, and exceptional skills as an engineer.
+
+      Micah began his journey with us as a Database Administrator, single-handedly managing critical data structures and storage solutions for our educational materials. His meticulous approach to data design, coupled with thoughtful implementation of triggers and constraints, ensured robust data integrity and reliability.
+
+      One of Micah's most remarkable qualities is his ability to rapidly acquire new skills. He quickly became proficient in Python and TypeScript, consistently producing safe, efficient, and maintainable code. His thorough understanding of our entire codebase and his proactive approach to tasks often led him to go beyond expectations to deliver outstanding results.
+
+      Micah excels in navigating complexity. When tasked with developing a highly intricate branching structure for our reading tests, he expertly crafted a series of pipelines and data structures, enabling reliable on-demand generation, just in time for the start of exams. His ability to interpret vague instructions and translate them into structured, efficient solutions is truly impressive.
+
+      Beyond his technical prowess, Micah is extremely organised, providing thorough documentation and clear, structured progress updates. He's a valued team player, always approachable and willing to support colleagues.
+
+      I wholeheartedly recommend Micah to any organisation looking for a dedicated, skilled, and reliable engineer. He would undoubtedly be an asset to any team.`, name: "Martin Hartt", role: "Senior AI Engineer", relationship: "Directly supervised Micah", photo: "/portraits/martin_hartt.jpg"}
+    ];
+import {currentTestimonialId} from "../store.js"
+import ArrowNarrowLeft from "../icons/ArrowNarrowLeft.astro";
+import ArrowNarrowRight from "../icons/ArrowNarrowRight.astro";
+import TestimonialItem from "./TestimonialItem.astro";
+---
+
+  <div class="mx-auto max-w-2xl px-4" data-tc={currentTestimonialId}>
+    <div class="flex items-center gap-3 mb-4">
+      <button type="button" data-prev={currentTestimonialId}>
+        <ArrowNarrowLeft stroke="#C9A227"/>
+      </button>
+
+      <div class="flex-1 text-[#FFF]/70 text-xs text-center">
+        <span data-count={currentTestimonialId}>1</span> / {TESTIMONIALS.length}
+      </div>
+
+      <button type="button" data-next={currentTestimonialId}>
+        <ArrowNarrowRight stroke="#C9A227"/>
+      </button>
+    </div>
+
+    <div class="relative">
+      {TESTIMONIALS.map((t) => (
+        <TestimonialItem currentTestimonialId={currentTestimonialId} {...t}/>
+      ))}
+    </div>
+    <script>
+      import {currentTestimonialId} from '../store.js'
+      const root = document.querySelector('[data-tc="' + currentTestimonialId + '"]') as Element;
+
+      const cards = Array.from(root.querySelectorAll('[data-card="' + currentTestimonialId + '"]'));
+      const prevBtn = root.querySelector('[data-prev="' + currentTestimonialId + '"]') as Element;
+      const nextBtn = root.querySelector('[data-next="' + currentTestimonialId + '"]') as Element;
+      const countEl = root.querySelector('[data-count="' + currentTestimonialId + '"]') as Element;
+
+      const wrap = (n: number) => ((n % cards.length) + cards.length) % cards.length;
+
+      let index = 0;
+      const setIndex = (i: number) => {
+        index = wrap(i);
+
+        cards.forEach((card, n) => {
+          const isEnabled = n === index;
+          card.classList.toggle('hidden', !isEnabled);
+          card.classList.toggle('opacity-100', isEnabled);
+          card.classList.toggle('opacity-0', !isEnabled);
+        });
+
+        countEl.textContent = String(index + 1);
+      };
+
+      prevBtn.addEventListener('click', () => setIndex(index - 1));
+      nextBtn.addEventListener('click', () => setIndex(index + 1));
+    </script>
+  </div>
