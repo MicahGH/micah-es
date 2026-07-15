@@ -16,6 +16,8 @@ import Brain from "../icons/Brain.astro";
 import Download from '../icons/Download.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Quotes from '../icons/Quotes.astro';
+import Certificate from '../icons/Certificate.astro';
+import Certifications from '../components/Certifications.astro';
 ---
 
 <Layout title="Portfolio of Micah Shiels - Software Engineer and Programmer">
@@ -70,6 +72,12 @@ import Quotes from '../icons/Quotes.astro';
 			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
 				<Quotes class="size-7"/>Testimonials</h2>
 			<Testimonials/>
+		</SectionContainer>
+
+		<SectionContainer id="certifications" class="py-15">
+			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
+				<Certificate class="size-7"/>Certifications</h2>
+			<Certifications/>
 		</SectionContainer>
 	</main>
 </Layout>

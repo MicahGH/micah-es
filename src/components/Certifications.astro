@@ -1,0 +1,68 @@
+---
+import InstitutoCervantes from "../icons/InstitutoCervantes.astro";
+import TEFLTrainer from "../icons/TEFLTrainer.astro";
+import Udemy from "../icons/Udemy.astro";
+import CertificationItem from "./CertificationItem.astro";
+
+const CERTIFICATIONS = [
+  {
+    logo: InstitutoCervantes,
+    title: "Diploma in Spanish as a Foreign Language (DELE) C2",
+    date: "Nov. 2022",
+    description: "Certified C2-level proficiency in Spanish, demonstrating near-native fluency and advanced communication skills."
+  },
+  {
+    logo: TEFLTrainer,
+    title: "Teaching English as a Foreign Language (TEFL) - Distinction",
+    date: "Sept. 2022",
+    description: "Qualified to teach English as a foreign language with distinction in teaching methodology and classroom practice."
+  },
+  {
+    logo: Udemy,
+    title: "Large-scale System Design and Software Architecture",
+    date: "Jul. 2026",
+    description: "Designing scalable, reliable, and maintainable distributed systems using modern software architecture principles."
+  },
+  {
+    logo: Udemy,
+    title: "Clean Code and SOLID Principles: Write Quality Code",
+    date: "Jul. 2026",
+    description: "Writing maintainable, readable, and extensible software by applying Clean Code practices and SOLID principles."
+  },
+  {
+    logo: Udemy,
+    title: "Algorithms, Data Structures and Interviews",
+    date: "Feb. 2026",
+    description: "Mastering core algorithms, data structures, and problem-solving techniques for technical interviews."
+  },
+  {
+    logo: Udemy,
+    title: "Python Master Course: From Zero to Programmer",
+    date: "Oct. 2022",
+    description: "Building strong Python programming skills, from fundamentals to advanced programming concepts."
+  },
+  {
+    logo: Udemy,
+    title: "The Complete SQL Bootcamp: Go from Zero to Hero",
+    date: "Jan. 2018",
+    description: "Developing practical SQL skills, including database design, querying, and PostgreSQL fundamentals."
+  }
+];
+---
+
+
+<script src="../js/emblaCarousel.js"></script>
+
+<body>
+    <div class="embla">
+      <div class="embla__viewport">
+        <div class="embla__container">
+        {CERTIFICATIONS.map((cert) => (
+            <div class="embla__slide">
+                <CertificationItem {...cert}/>
+            </div>
+        ))}
+        </div>
+      </div>
+    </div>
+  </body>
