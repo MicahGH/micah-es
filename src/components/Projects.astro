@@ -6,17 +6,24 @@ import SkillIconBox from "../icons/SkillIconBox.astro"
 
 const PROJECTS = [
     {
+        title: 'Bank Transaction Importer & API',
+        description: 'A resilient backend service designed to parse, normalise, and ingest bank transaction CSVs into PostgreSQL with strict data integrity. Built around a decoupled parser architecture, it handles edge-case date and currency formats, enforces transaction idempotency, and serves optimized account data via a cached REST API.',
+        github: 'https://github.com/MicahGH/flanks-technical-test',
+        image: './projects/bank_importer.png',
+        tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.POSTGRESQL, TAGS.UV, TAGS.DOCKER, TAGS.PYDANTIC],
+    },
+    {
         title: 'Café EPOS Backend',
-        description: 'A small implementation of the backend of a café EPOS system built for a technical test. It allows creating tabs and adding menu items, automatic calculation of subtotal, service charge, VAT and total, mock payment intents and confirmations and API key authentication for endpoints.',
-        github: 'https://github.com/MicahGH/cafe-epos',
+        description: 'A backend implementation for a café EPOS system built as a technical test. Features include tab management and menu item tracking, automated calculation of subtotals, service charges, VAT, and totals, idempotent payment intent orchestration with confirmations, and API key authentication.',
+        github: 'https://github.com/MicahGH/micah-dines-technical-test',
         image: './projects/cafe_epos.jpg',
-        tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.POSTGRESQL, TAGS.POETRY, TAGS.DOCKER],
+        tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.POSTGRESQL, TAGS.UV, TAGS.DOCKER],
     },
     {
         title: "Advanced SQL Puzzles — Micah's Solutions",
         description: 'If you know me, you know that I am a massive fan of SQL and solving problems with this holy language. After solving all of the SQL problems on LeetCode and seeking more of a challenge, I stumbled upon a repository called "AdvancedSQLPuzzles", and decided to have a go at solving all of them. These puzzles have further deepened my knowledge of the language and highlighted just how useful it is — especially the second part, which required solving problems like the Monty Hall problem, the 100 Prisoners Riddle, the Josephus Problem, and more. These were fascinating to investigate and solve.',
         github: 'https://github.com/MicahGH/advanced-sql-puzzles-micah-solutions',
-        tags: [TAGS.MICROSOFTSQLSERVER],
+        tags: [TAGS.MICROSOFTSQLSERVER, TAGS.SQL],
     },
     {
         title: "Nand2Tetris — Micah's Implementation",
@@ -26,10 +33,10 @@ const PROJECTS = [
     },
     {
         title: 'Personal Website / Portfolio — micah.es',
-        description: 'Built my own personal website / portfolio after buying the domain: micah.es. Most people know me as a Backend guy and BE guys are infamous for not liking FE, however there is no Wix, Wordpress, AI, etc. here. No easy way out. Just tutorials and learning the old-fashioned way. I even learnt to use GIMP to improve the quality and remove the background of my self-portrait. FE is way cooler than I thought.',
+        description: 'Built my own personal website / portfolio after buying the domain: micah.es. Most people know me as a Backend guy and BE guys are infamous for not liking FE, however there is no Wix, Wordpress, AI, etc. here. No easy way out. Just tutorials and learning the old-fashioned way. I even learnt to use GIMP to improve the quality and remove the background of my self-portrait.',
         github: 'https://github.com/MicahGH/micah-es',
         image: './projects/micah_es.jpg',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.HTML, TAGS.CSS], 
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.HTML, TAGS.CSS, TAGS.TYPESCRIPT], 
     },
 ]
 ---
