@@ -18,11 +18,13 @@ import Testimonials from '../components/Testimonials.astro';
 import Quotes from '../icons/Quotes.astro';
 import Certificate from '../icons/Certificate.astro';
 import Certifications from '../components/Certifications.astro';
+import Education from '../components/Education.astro';
+import GraduationCap from '../icons/GraduationCap.astro';
 ---
 
 <Layout title="Portfolio of Micah Shiels - Software Engineer">
 	<main class="px-4">
-		<SectionContainer id="home" class="py-4">
+		<SectionContainer id="home" class="py-15">
 		<div class="flex justify-center"><img class="w-full max-w-72 sm:max-w-96 h-auto mask-[linear-gradient(to_bottom,black_50%,transparent_100%)]" src="/portraits/micah_shiels.png" alt="Portrait of Micah Shiels in black and white"/></div>
 		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">Micah Shiels <a href="https://www.linkedin.com/in/micahshiels" class="flex justify-center items-center" target="_blank" rel="noopener"><ShinyBadge class="bdg-gold">Available to hire</ShinyBadge></a></h1>
 		<h2 class="text-2xl text-wrap">Software Engineer based in <span class="bg-[linear-gradient(to_bottom,#AA151B_0%,#AA151B_30%,#F1BF00_30%,#F1BF00_70%,#AA151B_70%,#AA151B_100%)] bg-clip-text text-transparent">Spain</span> with 8 years of tech experience. Strong in AI  / ML / data pipelines, SQL and NoSQL databases, scalable APIs, and production-quality systems.</h2>
@@ -56,7 +58,13 @@ import Certifications from '../components/Certifications.astro';
 			<Timeline/>
 		</SectionContainer>
 
-		<SectionContainer id="projects">
+		<SectionContainer id="education" class="py-15">
+			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
+				<GraduationCap class="size-7"/>Education</h2>
+			<Education/>
+		</SectionContainer>
+
+		<SectionContainer id="projects" class="py-15">
 			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
 				<Code class="size-7"/>Projects</h2>
 			<Projects/>
